@@ -199,7 +199,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-//                            ((MainActivity)context).updateAdapter();
+                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, dayDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
