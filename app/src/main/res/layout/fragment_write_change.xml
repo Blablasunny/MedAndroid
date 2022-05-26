@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:focusable="true"
+    tools:context="fragment.WriteChangeFragment"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/change_write"
+        android:textSize="37sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginVertical="25dp"
+        android:layout_marginHorizontal="12dp"/>
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="@string/edit_name_write"
+        android:textSize="15sp"
+        android:gravity="top"
+        android:textColor="@color/black"
+        android:background="@color/pale_blue"
+        android:padding="5dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginVertical="10dp"/>
+
+    <EditText
+        android:id="@+id/edt_info"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:hint="@string/edit_text"
+        android:textSize="15sp"
+        android:gravity="top"
+        android:textColor="@color/black"
+        android:background="@color/pale_blue"
+        android:padding="5dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_patient"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:text="@string/patient"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginVertical="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spn_patient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_doctor"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:text="@string/doctor"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginVertical="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spn_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:text="@string/date"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_marginVertical="10dp"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spn_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_change_write"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:text="@string/change_write"
+        android:layout_gravity="center"
+        android:layout_marginVertical="20dp"
+        android:background="@color/turquoise_blue"
+        android:textSize="15sp" />
+
+</LinearLayout>

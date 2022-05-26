@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Med</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="med_carta">Медицинская карта</string>
+    <string name="add_day">Создать новый день</string>
+    <string name="edit_name_write">Введите название записи</string>
+    <string name="edit_text">Введите текст</string>
+    <string name="edit_date">Введите новую дату</string>
+    <string name="add">Создать</string>
+    <string name="add_client">Добавить клиента</string>
+    <string name="edit_name">Введите имя</string>
+    <string name="edit_surname">Введите фамилию</string>
+    <string name="edit_patronymic">Введите отчество</string>
+    <string name="edit_age">Введите возраст</string>
+    <string name="edit_phone_number">Введите номер телефона</string>
+    <string name="edit_email">Введите email</string>
+    <string name="add_patient">Создать пациента</string>
+    <string name="add_doctor">Создать врача</string>
+    <string name="add_write">Создать запись</string>
+    <string name="patient">Пациент</string>
+    <string name="doctor">Врач</string>
+    <string name="change_write">Изменить запись</string>
+    <string name="date">Дата</string>
+    <string name="day">д.д.</string>
+    <string name="month">м.м.</string>
+    <string name="year">г.г.г.г.</string>
+</resources>
