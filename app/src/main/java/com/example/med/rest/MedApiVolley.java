@@ -26,6 +26,8 @@ import com.example.med.bd.patient.PatientRoomDatabase;
 import com.example.med.bd.write.Write;
 import com.example.med.bd.write.WriteDao;
 import com.example.med.bd.write.WriteRoomDatabase;
+import com.example.med.fragment.DayAddFragment;
+import com.example.med.fragment.DayFragment;
 import com.example.med.mapper.DayMapper;
 import com.example.med.mapper.DoctorMapper;
 import com.example.med.mapper.PatientMapper;
@@ -35,7 +37,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -117,7 +118,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-//                            ((MainActivity)context).updateAdapter();
+                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, patientDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -158,7 +159,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-//                            ((MainActivity)context).updateAdapter();
+                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, doctorDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -240,7 +241,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-//                            ((MainActivity)context).updateAdapter();
+                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, writeDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();

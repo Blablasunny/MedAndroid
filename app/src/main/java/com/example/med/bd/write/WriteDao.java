@@ -45,6 +45,6 @@ public interface WriteDao {
     @Query("SELECT * FROM write where day_id = :day_id")
     List<Write> getWriteByDayId(long day_id);
 
-    @Query("SELECT * FROM write where id = :id")
-    Write getWriteById(long id);
+    @Query("SELECT * FROM write where day_id = :day_id")
+    Write getWriteById(long day_id);
 }

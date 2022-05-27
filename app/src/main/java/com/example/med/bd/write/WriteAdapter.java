@@ -78,7 +78,7 @@ public class WriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.recycler_client, parent, false);
+        View view = inflater.inflate(R.layout.recycler_write, parent, false);
 
         return new MyHolder(view);
     }

@@ -3,11 +3,8 @@ package com.example.med;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +12,7 @@ import com.example.med.bd.day.Day;
 import com.example.med.bd.day.DayAdapter;
 import com.example.med.bd.day.DayRoomDatabase;
 import com.example.med.fragment.DayAddFragment;
+import com.example.med.fragment.PatientDoctorFragment;
 import com.example.med.rest.MedApiVolley;
 
 import java.util.ArrayList;
@@ -29,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
     private MedApiVolley medApiVolley;
 
-
     private AppCompatButton btnAdd;
+    private AppCompatButton btnPatient;
+    private AppCompatButton btnDoctor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnAdd = findViewById(R.id.btn_add_day);
+        btnPatient = findViewById(R.id.btn_patient);
+        btnDoctor = findViewById(R.id.btn_doctor);
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +53,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                PatientDoctorFragment patientDoctorFragment = new PatientDoctorFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Client", "Пациенты");
+
+                patientDoctorFragment.setArguments(bundle);
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.fl_main, patientDoctorFragment)
+                        .commit();
+            }
+        });
+
+        btnDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                PatientDoctorFragment patientDoctorFragment = new PatientDoctorFragment();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("Client", "Врачи");
+
+                patientDoctorFragment.setArguments(bundle);
+
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.fl_main, patientDoctorFragment)
+                        .commit();
+            }
+        });
+        medApiVolley = new MedApiVolley(MainActivity.this);
+        medApiVolley.fillDay();
+
         dayRoomDatabase = DayRoomDatabase.getInstance(this);
 
         Thread thread=new Thread(new AnotherRunnable());
@@ -63,13 +103,15 @@ public class MainActivity extends AppCompatActivity {
             dayList = (ArrayList<Day>) dayRoomDatabase
                     .getDayDao()
                     .loadAll();
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
 
                     medApiVolley = new MedApiVolley(MainActivity.this);
                     medApiVolley.fillDay();
-
+                    medApiVolley.fillPatient();
+                    medApiVolley.fillDoctor();
                     rvDay = findViewById(R.id.rv_day);
                     dayAdapter = new DayAdapter(MainActivity.this, dayList);
                     rvDay.setAdapter(dayAdapter);
@@ -98,6 +140,5 @@ public class MainActivity extends AppCompatActivity {
 
             finish();
         }
-
     }
 }
