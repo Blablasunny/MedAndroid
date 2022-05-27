@@ -45,7 +45,7 @@ import java.util.Map;
 public class MedApiVolley implements MedApi {
 
     public static final String API_TEST = "API_TEST";
-    public static final String BASE_URL ="http://192.168.0.15:8083";
+    public static final String BASE_URL ="http://192.168.0.15:8084";
     private final Context context;
     private  Response.ErrorListener errorListener;
 
