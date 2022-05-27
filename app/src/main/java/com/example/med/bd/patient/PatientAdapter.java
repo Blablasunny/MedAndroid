@@ -62,17 +62,17 @@ public class PatientAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             @Override
             public void onClick(View view) {
 
-                PatientDoctorChangeFragment changeBookFragment = new PatientDoctorChangeFragment();
+                PatientDoctorChangeFragment patientDoctorChangeFragment = new PatientDoctorChangeFragment();
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Client", patient);
                 bundle.putString("Client1", "Пациенты");
 
-                changeBookFragment.setArguments(bundle);
+                patientDoctorChangeFragment.setArguments(bundle);
 
                 ((AppCompatActivity)context).getSupportFragmentManager()
                         .beginTransaction()
-                        .add(R.id.fl_main, changeBookFragment)
+                        .add(R.id.fl_main, patientDoctorChangeFragment)
                         .commit();
             }
         });

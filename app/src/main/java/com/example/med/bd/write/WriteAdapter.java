@@ -21,6 +21,7 @@ import com.example.med.bd.patient.PatientAdapter;
 import com.example.med.bd.patient.PatientDao;
 import com.example.med.bd.patient.PatientRoomDatabase;
 import com.example.med.fragment.PatientDoctorChangeFragment;
+import com.example.med.fragment.WriteChangeFragment;
 
 import java.util.List;
 
@@ -108,16 +109,16 @@ public class WriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             @Override
             public void onClick(View view) {
 
-                PatientDoctorChangeFragment changeBookFragment = new PatientDoctorChangeFragment();
+                WriteChangeFragment writeChangeFragment = new WriteChangeFragment();
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Write", write);
 
-                changeBookFragment.setArguments(bundle);
+                writeChangeFragment.setArguments(bundle);
 
                 ((AppCompatActivity)context).getSupportFragmentManager()
                         .beginTransaction()
-                        .add(R.id.fl_main, changeBookFragment)
+                        .add(R.id.fl_main, writeChangeFragment)
                         .commit();
             }
         });
