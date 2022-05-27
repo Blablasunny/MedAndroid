@@ -107,6 +107,7 @@
         android:layout_gravity="center"
         android:layout_marginVertical="20dp"
         android:background="@color/turquoise_blue"
+        android:text="@string/add1"
         android:textSize="15sp" />
 
 </LinearLayout>

@@ -2,8 +2,10 @@ package com.example.med.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -32,6 +34,8 @@ public class DayFragment extends Fragment {
 
     private AppCompatButton btnAdd;
     private TextView tvDate;
+
+    private ItemTouchHelper.SimpleCallback simpleCallback;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,6 +69,31 @@ public class DayFragment extends Fragment {
 
         Thread thread = new Thread(new AnotherRunnable());
         thread.start();
+
+        simpleCallback = new ItemTouchHelper.SimpleCallback(
+                0,
+                ItemTouchHelper.LEFT
+        ) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+                Write write = writeList.get(viewHolder.getAdapterPosition());
+
+                if (direction == ItemTouchHelper.LEFT) {
+
+                    writeRoomDatabase.getWriteDao().delete(write);
+                    medApiVolley.deleteWrite(write.getId());
+                }
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(rvWrite);
 
         return view;
     }

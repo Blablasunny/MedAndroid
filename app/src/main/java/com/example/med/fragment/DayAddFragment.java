@@ -28,9 +28,7 @@ public class DayAddFragment extends Fragment {
     private MedApiVolley medApiVolley;
 
     private AppCompatButton btnAdd;
-    private EditText tvDay;
-    private EditText tvMonth;
-    private EditText tvYear;
+    private EditText tvDay, tvMonth, tvYear;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

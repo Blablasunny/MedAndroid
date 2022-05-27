@@ -32,7 +32,6 @@
         android:background="@color/pale_blue"
         android:padding="5dp"
         android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="20dp"
         android:layout_marginVertical="10dp"/>
 
     <EditText
@@ -46,7 +45,7 @@
         android:background="@color/pale_blue"
         android:padding="5dp"
         android:layout_marginHorizontal="12dp"
-        android:layout_marginVertical="10dp"/>
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_patient"
@@ -94,7 +93,7 @@
         android:layout_marginVertical="10dp"/>
 
     <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/spn_date"
+        android:id="@+id/spn_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>

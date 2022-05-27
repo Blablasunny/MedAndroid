@@ -118,7 +118,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-                            ((MainActivity)context).updateAdapter();
+//                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, patientDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -159,7 +159,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-                            ((MainActivity)context).updateAdapter();
+//                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, doctorDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -200,7 +200,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-                            ((MainActivity)context).updateAdapter();
+//                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, dayDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -241,7 +241,7 @@ public class MedApiVolley implements MedApi {
                                 }
                             }
 
-                            ((MainActivity)context).updateAdapter();
+//                            ((MainActivity)context).updateAdapter();
                             Log.d(API_TEST, writeDao.loadAll().toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -269,7 +269,8 @@ public class MedApiVolley implements MedApi {
                     @Override
                     public void onResponse(String response) {
 
-                        fillDay();
+                        DayDao dayDao = dayDb(context);
+                        dayDao.insert(day);
 
                         Log.d(API_TEST, response);
                     }
@@ -307,7 +308,8 @@ public class MedApiVolley implements MedApi {
                     @Override
                     public void onResponse(String response) {
 
-                        fillPatient();
+                        PatientDao patientDao = patientDb(context);
+                        patientDao.insert(patient);
 
                         Log.d(API_TEST, response);
                     }
@@ -349,7 +351,8 @@ public class MedApiVolley implements MedApi {
                     @Override
                     public void onResponse(String response) {
 
-                        fillDoctor();
+                        DoctorDao doctorDao = doctorDb(context);
+                        doctorDao.insert(doctor);
 
                         Log.d(API_TEST, response);
                     }
@@ -393,7 +396,6 @@ public class MedApiVolley implements MedApi {
 
                         PatientDao patientDao = patientDb(context);
                         patientDao.update(patient);
-                        fillPatient();
 
                         Log.d(API_TEST, response);
                     }
@@ -437,7 +439,6 @@ public class MedApiVolley implements MedApi {
 
                         DoctorDao doctorDao = doctorDb(context);
                         doctorDao.update(doctor);
-                        fillDoctor();
 
                         Log.d(API_TEST, response);
                     }
@@ -479,7 +480,8 @@ public class MedApiVolley implements MedApi {
                     @Override
                     public void onResponse(String response) {
 
-                        fillWrite();
+                        WriteDao writeDao = writeDb(context);
+                        writeDao.insert(write);
 
                         Log.d(API_TEST, response);
                     }
@@ -523,7 +525,6 @@ public class MedApiVolley implements MedApi {
 
                         WriteDao writeDao = writeDb(context);
                         writeDao.update(write);
-                        fillWrite();
 
                         Log.d(API_TEST, response);
                     }
@@ -564,9 +565,8 @@ public class MedApiVolley implements MedApi {
                     @Override
                     public void onResponse(String response) {
 
-                        WriteDao writeDao = writeDb(context);
-                        writeDao.delete(writeDao.getWriteById(id));
-                        fillWrite();
+//                        WriteDao writeDao = writeDb(context);
+//                        writeDao.delete(writeDao.getWriteById(id));
 
                         Log.d(API_TEST, response);
                     }

@@ -17,7 +17,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_patient"
+                android:id="@+id/btn_doctor"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
@@ -25,7 +25,7 @@
                 android:layout_margin="5dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_doctor"
+                android:id="@+id/btn_patient"
                 android:layout_width="60dp"
                 android:layout_height="50dp"
                 android:layout_gravity="end"

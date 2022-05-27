@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MedApiVolley medApiVolley;
 
-    private AppCompatButton btnAdd;
-    private AppCompatButton btnPatient;
-    private AppCompatButton btnDoctor;
+    private AppCompatButton btnAdd, btnPatient, btnDoctor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,10 +118,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void updateAdapter() {
-
-        dayAdapter.notifyDataSetChanged();
-    }
+//    public void updateAdapter() {
+//
+//        dayAdapter.notifyDataSetChanged();
+//    }
 
     @Override
     public void onBackPressed() {

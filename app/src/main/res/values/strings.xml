@@ -25,4 +25,6 @@
     <string name="day">д.д.</string>
     <string name="month">м.м.</string>
     <string name="year">г.г.г.г.</string>
+    <string name="add1">Добавить</string>
+    <string name="change">Изменить</string>
 </resources>

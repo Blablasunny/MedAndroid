@@ -67,6 +67,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Client", doctor);
+                bundle.putString("Client1", "Врачи");
 
                 changeBookFragment.setArguments(bundle);
 
