@@ -91,8 +91,22 @@ public class MainActivity extends AppCompatActivity {
 
         dayRoomDatabase = DayRoomDatabase.getInstance(this);
 
+        medApiVolley = new MedApiVolley(MainActivity.this);
+        medApiVolley.fillDay();
+        medApiVolley.fillPatient();
+        medApiVolley.fillDoctor();
+
+        dayList = (ArrayList<Day>) dayRoomDatabase
+                .getDayDao()
+                .loadAll();
+
+        rvDay = findViewById(R.id.rv_day);
+        dayAdapter = new DayAdapter(MainActivity.this, dayList);
+        rvDay.setAdapter(dayAdapter);
+
         Thread thread=new Thread(new AnotherRunnable());
         thread.start();
+
     }
 
     class AnotherRunnable implements Runnable {
@@ -106,10 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    medApiVolley = new MedApiVolley(MainActivity.this);
-                    medApiVolley.fillDay();
-                    medApiVolley.fillPatient();
-                    medApiVolley.fillDoctor();
                     rvDay = findViewById(R.id.rv_day);
                     dayAdapter = new DayAdapter(MainActivity.this, dayList);
                     rvDay.setAdapter(dayAdapter);
@@ -118,10 +128,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void updateAdapter() {
-//
-//        dayAdapter.notifyDataSetChanged();
-//    }
+    public void updateAdapter() {
+
+        dayAdapter.notifyDataSetChanged();
+    }
 
     @Override
     public void onBackPressed() {

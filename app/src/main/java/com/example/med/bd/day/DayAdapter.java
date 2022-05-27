@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.med.R;
 import com.example.med.fragment.DayFragment;
 import com.example.med.fragment.PatientDoctorChangeFragment;
+import com.example.med.rest.MedApiVolley;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -22,6 +25,7 @@ public class DayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Context context;
     private final LayoutInflater inflater;
     private final List<Day> dayList;
+
 
     public DayAdapter(Context context, List<Day> dayList) {
         this.context = context;
@@ -76,7 +80,6 @@ public class DayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public int getItemCount() {
-        return dayList.size();
-    }
+    public int getItemCount() { return dayList.size(); }
+
 }

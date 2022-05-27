@@ -5,13 +5,15 @@ import com.example.med.bd.doctor.Doctor;
 import com.example.med.bd.patient.Patient;
 import com.example.med.bd.write.Write;
 
+import java.util.List;
+
 public interface MedApi {
 
     void fillPatient();
 
     void fillDoctor();
 
-    void fillDay();
+   void fillDay();
 
     void fillWrite();
 

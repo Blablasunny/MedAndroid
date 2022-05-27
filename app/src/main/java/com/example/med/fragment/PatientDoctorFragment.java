@@ -62,7 +62,7 @@ public class PatientDoctorFragment extends Fragment {
                 PatientDoctorAddFragment patientDoctorAddFragment = new PatientDoctorAddFragment();
 
                 Bundle bundle = new Bundle();
-                bundle.putString("Client", "Врачи");
+                bundle.putString("Client", s);
 
                 patientDoctorAddFragment.setArguments(bundle);
 
